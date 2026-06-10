@@ -1,0 +1,68 @@
+[
+    {
+        "isbn": "978-8535914849",
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "genero": "Distopia",
+        "ano_publicacao": 1949,
+        "editora": "Companhia das Letras",
+        "paginas": 416,
+        "status": "disponivel",
+        "localizacao": "Estante A1, Prateleira 2"
+    },
+    {
+        "isbn": "978-8535918465",
+        "titulo": "Admirável Mundo Novo",
+        "autor": "Aldous Huxley",
+        "genero": "Distopia",
+        "ano_publicacao": 1932,
+        "editora": "Companhia das Letras",
+        "paginas": 312,
+        "status": "disponivel",
+        "localizacao": "Estante A1, Prateleira 3"
+    },
+    {
+        "isbn": "978-8595081536",
+        "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
+        "autor": "J.R.R. Tolkien",
+        "genero": "Fantasia",
+        "ano_publicacao": 1954,
+        "editora": "HarperCollins",
+        "paginas": 576,
+        "status": "disponivel",
+        "localizacao": "Estante B2, Prateleira 2"
+    },
+    {
+        "isbn": "978-8576573180",
+        "titulo": "Duna",
+        "autor": "Frank Herbert",
+        "genero": "Ficção Científica",
+        "ano_publicacao": 1665,
+        "editora": "Editora Aleph",
+        "paginas": 680,
+        "status": "disponivel",
+        "localizacao": "Estante C1, Prateleira 4"
+    },
+    {
+        "isbn": "978-8501113061",
+        "titulo": "O Alquimista",
+        "autor": "Paulo Coelho",
+        "genero": "Ficção",
+        "ano_publicacao": 1888,
+        "editora": "Paralela",
+        "paginas": 208,
+        "status": "emprestado",
+        "localizacao": "Estante D3, Prateleira 2"
+    },
+    {
+        "isbn": "978-8520935170",
+        "titulo": "Admirável Mundo Novo",
+        "autor": "Aldous Huxley",
+        "genero": "Distopia",
+        "ano_publicacao": "1932",
+        "editora": "Biblioteca Azul",
+        "paginas": "312",
+        "status": "disponivel",
+        "localizacao": "Estante A1, Prateleira 2"
+    }
+]
