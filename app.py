@@ -95,5 +95,9 @@ def excluir_livro(isbn):
     flash(f'Livro com ISBN {isbn} foi removido com sucesso!')
     dados.salvar_no_arquivo(biblioteca)
     return redirect(url_for('interface_web'))
+
+@app.route('/biblioteca/alterar/<isbn>', methods=['POST'])
+def alterar_livro(isbn):
+    biblioteca = dados.carregar_do_arquivo()
 if __name__ == '__main__' :
     app.run(debug=True)
