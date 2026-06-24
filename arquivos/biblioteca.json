@@ -1,27 +1,5 @@
 [
     {
-        "isbn": "978-8535914849",
-        "titulo": "1984",
-        "autor": "George Orwell",
-        "genero": "Distopia",
-        "ano_publicacao": 1949,
-        "editora": "Companhia das Letras",
-        "paginas": 416,
-        "status": "disponivel",
-        "localizacao": "Estante A1, Prateleira 2"
-    },
-    {
-        "isbn": "978-8535918465",
-        "titulo": "Admirável Mundo Novo",
-        "autor": "Aldous Huxley",
-        "genero": "Distopia",
-        "ano_publicacao": 1932,
-        "editora": "Companhia das Letras",
-        "paginas": 312,
-        "status": "disponivel",
-        "localizacao": "Estante A1, Prateleira 3"
-    },
-    {
         "isbn": "978-8595081536",
         "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
         "autor": "J.R.R. Tolkien",

@@ -1,9 +1,10 @@
-from flask import Flask, jsonify, request, render_template #type: ignore
+from flask import Flask, jsonify, request, render_template, flash, redirect,url_for #type: ignore
 import dados
 
 biblioteca = dados.carregar_do_arquivo() 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'MinhaChaveSuperSecretaeSegura123'
 
 @app.route('/')
 def hello ():
@@ -87,5 +88,12 @@ def cria_livro():
     else:
         return render_template('criar_livro.html')
 
+@app.route('/biblioteca/excluir/<isbn>', methods=['POST'])
+def excluir_livro(isbn):
+    biblioteca = dados.carregar_do_arquivo()
+    biblioteca = [livro for livro in biblioteca if livro['isbn'] != isbn]
+    flash(f'Livro com ISBN {isbn} foi removido com sucesso!')
+    dados.salvar_no_arquivo(biblioteca)
+    return redirect(url_for('interface_web'))
 if __name__ == '__main__' :
     app.run(debug=True)
