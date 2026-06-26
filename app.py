@@ -6,6 +6,14 @@ biblioteca = dados.carregar_do_arquivo()
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'MinhaChaveSuperSecretaeSegura123'
 
+def encontrar_livro(isbn):
+    biblioteca = dados.carregar_do_arquivo()
+    for livro in biblioteca:
+        if livro['isbn'] == isbn:
+            print(livro)
+            return livro
+    return None
+
 @app.route('/')
 def hello ():
     return render_template('hello.html')
@@ -96,8 +104,29 @@ def excluir_livro(isbn):
     dados.salvar_no_arquivo(biblioteca)
     return redirect(url_for('interface_web'))
 
-@app.route('/biblioteca/alterar/<isbn>', methods=['POST'])
-def alterar_livro(isbn):
+@app.route('/biblioteca/atualizar', methods=['GET', 'POST'])
+def atualiza_livro():
     biblioteca = dados.carregar_do_arquivo()
+    livro = encontrar_livro(request.args.get('isbn'))
+    if request.method == 'POST':
+        atualizado = {
+            'isbn': request.args.get('isbn'),
+            'titulo': request.form.get('titulo'),
+            'autor': request.form.get('autor'),
+            "genero": request.form.get('genero'),
+            "ano_publicacao": request.form.get('ano_publicacao'),
+            "editora": request.form.get('editora'),
+            "paginas": request.form.get('paginas'),
+            "status": request.form.get('status'),
+            "localizacao": request.form.get('localizacao')
+        }
+        if livro:
+            biblioteca.remove(livro)
+            biblioteca.append(atualizado)
+            dados.salvar_no_arquivo(biblioteca)
+        return redirect(url_for('lista_livros'))
+    else:
+        if livro:
+            return render_template('atualizar_livro.html', livro=livro)
 if __name__ == '__main__' :
     app.run(debug=True)
